@@ -1,0 +1,119 @@
+﻿<Window x:Class="HCIFinalVersion1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:HCIFinalVersion1="clr-namespace:HCIFinalVersion1"
+        xmlns:Controls="clr-namespace:Coding4Fun.Kinect.Wpf.Controls;assembly=Coding4Fun.Kinect.Wpf"
+        Title="MainWindow" Height="800" Width="1280" Loaded="Window_Loaded" Cursor="Pen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.486,0.986" StartPoint="0.486,0">
+                <GradientStop Color="#FF000000" Offset="0"/>
+                <GradientStop Color="#FFD0D0D0" Offset="1"/>
+                <GradientStop Color="#FF8D8D8D" Offset="0.558"/>
+                <GradientStop Color="#FF8D8D8D" Offset="0.76"/>
+                <GradientStop Color="#FF747474" Offset="0.615"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Height="750" HorizontalAlignment="Left" Margin="12,12,0,0" Name="grid1" VerticalAlignment="Top" Width="1230">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52*" />
+                <RowDefinition Height="235*" />
+            </Grid.RowDefinitions>
+            <Canvas Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+            <InkCanvas x:Name="inkCanvas" Background="AliceBlue" Grid.Row="1">
+            </InkCanvas>
+            
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="One" Content="One" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="Two" Content="Two" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="Three" Content="Three" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="Four" Content="Four" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="LoadImage" Content="Load Image" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="Six" Content="Six" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="Seven" Content="Seven" Background="White" />
+                <Button Margin="5,5,5,5" Width="100" Height="100" Name="Eight" Content="Eight" Background="White" />
+                
+            </StackPanel>
+            
+            <!--
+            <HCIFinalVersion1:FishEyePanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Grid.Row="0" AnimationMilliseconds="125" Magnification="2" ScaleToFit="True">
+                <HCIFinalVersion1:FishEyePanel.Background>
+                    <LinearGradientBrush EndPoint="0.503,1.086" StartPoint="0.503,0.057">
+                        <GradientStop Color="#FF5BB0ED" Offset="0"/>
+                        <GradientStop Color="#FF052C48" Offset="0.976"/>
+                    </LinearGradientBrush>
+                </HCIFinalVersion1:FishEyePanel.Background>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="One" Content="One"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Two" Content="Two"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Three" Content="Three"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Four" Content="Four"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Five" Content="Five"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Six" Content="Six"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Seven" Content="Seven"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Name="Eight" Content="Eight"/>
+            </HCIFinalVersion1:FishEyePanel>
+            -->
+        </Grid>
+
+
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Canvas Name="MainCanvas">
+                <Ellipse Canvas.Left="0" Canvas.Top="0" Height="30" Name="headEllipse" Width="30" Fill="Green" />
+                <!-- <Ellipse Canvas.Left="0" Canvas.Top="0" Height="30" Name="handEllipse" Width="30" Fill="Red" /> -->
+                <Ellipse Height="40" Width="40" Name="rightHandEllipse">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Resources/Hand.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <Ellipse Height="40" Width="40" Name="leftHandEllipse">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Resources/Hand.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <!-- <Controls:HoverButton x:Name="kinectButton" ImageSize="100" ImageSource="/Resources/RedButton-Hover.png"  ActiveImageSource="/Resources/RedButton-Active.png" TimeInterval="3000" /> -->
+            </Canvas>
+            <StackPanel Height="100" Name="stackPanel1" Width="200" />
+        </StackPanel>
+        <!--
+        <StackPanel Orientation="Vertical" Grid.ColumnSpan="2">
+            <Image Height="250" HorizontalAlignment="Right" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="350" />
+            <Image Height="250" HorizontalAlignment="Right" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="350" />
+
+        </StackPanel>
+        -->
+        
+        
+        <!--
+        <Grid Height="750" HorizontalAlignment="Left" Margin="12,12,0,0" Name="grid1" VerticalAlignment="Top" Width="1230">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52*" />
+                <RowDefinition Height="235*" />
+            </Grid.RowDefinitions>
+            <Canvas Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+            <InkCanvas x:Name="inkCanvas" Background="AliceBlue" Grid.Row="1">
+            </InkCanvas>
+            <HCIFinalVersion1:FishEyePanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Grid.Row="0" AnimationMilliseconds="125" Magnification="2" ScaleToFit="True">
+                <HCIFinalVersion1:FishEyePanel.Background>
+                    <LinearGradientBrush EndPoint="0.503,1.086" StartPoint="0.503,0.057">
+                        <GradientStop Color="#FF5BB0ED" Offset="0"/>
+                        <GradientStop Color="#FF052C48" Offset="0.976"/>
+                    </LinearGradientBrush>
+                </HCIFinalVersion1:FishEyePanel.Background>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+                <Button Margin="5,5,5,5" Width="50" Height="50" Content="Button"/>
+            </HCIFinalVersion1:FishEyePanel>
+
+            <Ellipse Canvas.Left="50" Canvas.Top="0" Height="30" Name="handEllipse" Width="30" Fill="#FF426F96"/>
+        </Grid>
+        -->
+    </Grid>
+</Window>
